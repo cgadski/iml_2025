@@ -48,7 +48,6 @@ def show_classifier(ax, x, y, model):
         classes,
         cmap=cmap,
         norm=BoundaryNorm(np.arange(k + 1), k),
-        alpha=LogNorm()(predicted_prob),
     )
 
     ax.scatter(
