@@ -25,12 +25,14 @@ import matplotlib.pyplot as plt
 
 # %% [markdown]
 # ### (c)
-# > Compute and display the state values $V(i)$ for `make_big_dungeon()`.
+# > In whatever notation you prefer, write down the _Bellman relations_ that
+# > characterize the optimal state values $V(i).$
 
 # %% [markdown]
 # ### (d)
-# > Based on the optimal state values $V(i),$ compute an optimal policy for the
-# > big dungeon. Display it using `dungeon.show_policy()`.
+# > **Bonus**: Compute and display the state values $V(i)$ for
+# > `make_big_dungeon()`. Using the state values, compute an optimal policy for
+# > the big dungeon and display it using `dungeon.show_policy()`.
 
 
 # %% [markdown]
@@ -39,13 +41,14 @@ import matplotlib.pyplot as plt
 # %% [markdown]
 # ### (a)
 # > Using the language of state value functions, explain how you would normally
-# > solve tic-tac-toe. What would you say is the value of the starting state?
+# > solve tic-tac-toe. What is the meaning of the value of a position? What
+# > would you say is the value of the starting state?
 
 # %% [markdown]
 # ### (b)
 # > Implement an agent that learns tic-tac-toe through Q-learning. By whatever
 # > means necessary, ensure that the trained agent wins at least $99\%$ of the
-# > time in a trial of $100,000$ games against the random opponent.
+# > time in a trial of $100,000$ fair games against the random opponent.
 
 # %% [markdown]
 # ### (c)

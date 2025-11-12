@@ -104,7 +104,7 @@ class Dungeon:
                 if vect.dtype.type == np.str_:
                     text = vect[i]
                 else:
-                    text = f"{vect[i]:.1f}"
+                    text = f"{vect[i]:.2f}"
                 ax.text(*text_pos(-0.2), text, **text_opts("regular"))
 
     def show_policy(self, actions):
