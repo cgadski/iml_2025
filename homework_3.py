@@ -21,28 +21,22 @@ import matplotlib.pyplot as plt
 
 # %% [markdown]
 # ### (b)
-# > Using the `Linear` module from `dl.py`, train your own logistic regression
-# > model on the MNIST dataset using gradient descent on cross-entropy loss. Run
-# > for two epochs on minibatches of size 256, and ensure your model has at
-# > least 90% accuracy on the test set.
-
-# %% [markdown]
-# ### (c)
 # > Write a `ReLU` module that applies the ReLU activation. (Remember that ReLU
 # > replaces negative inputs with zero and passes positive inputs through.)
 # > Explain how you derived the backward pass.
 
 # %% [markdown]
-# ### (d)
+# ### (c)
 # > Using `Linear` and `ReLU` modules, build some kind of multi-layer perceptron
 # > and train it on MNIST. Ensure your model has at least 95% accuracy on the
 # > test set.
 
 # %% [markdown]
-# ### (e)
+# ### (d)
 # > **Bonus**: Still using only `numpy` and `iml/`, design a MLP that achieves
-# > at least 98% test accuracy and takes less than 5 minutes to train on a
-# > typical consumer CPU.
+# > at least 98% test accuracy and trains in a short amount of time. (Say: under
+# > 5 minutes on a median consumer CPU). You may consider using a library like
+# > optuna.
 
 
 # %% [markdown]
@@ -51,32 +45,32 @@ import matplotlib.pyplot as plt
 # %% [markdown]
 # ### (a)
 # > Let's start by training the model `Linear(3, 3)` on `ulu.csv` with the
-# > reconstruction loss objective. Run full-batch gradient descent on the raw
-# > data. Show your loss curve over 50 iterations and determine, without doing
-# > any additional calculations, if gradient descent seems to have a good rate
-# > of convergence.
+# > reconstruction loss objective. Initialize the weight matrix randomly (this
+# > is the default behavior for `Linear`) and run full-batch gradient descent
+# > using the raw data as input for 50 iterations. Does there exist any learning
+# > rate for which gradient descent has a good rate of convergence?
 
 # %% [markdown]
 # ### (b)
-# > Consider the `ulu.csv` dataset. Make an autoencoder that encodes datapoints
-# > as two-dimensional vectors. Using only `numpy` and `iml/`, minimize its
-# > reconstruction loss (in squared Euclidean distance) using gradient descent.
-# > Report the final reconstruction loss and confirm that it is close to the
-# > theoretical minimum.
+# > Make an autoencoder that encodes the datapoints of `ulu.csv` as
+# > two-dimensional vectors. Minimize its reconstruction loss (in squared
+# > Euclidean distance) using gradient descent. Report the final reconstruction
+# > loss and confirm that it is close to the theoretical minimum.
 
 # %% [markdown]
 # ### (c)
-# > Now implement a `DropoutOne` module whose forward pass zeros out the first
-# > dimension of each input vector with probability $0.5.$ What is the correct
-# > way to implement a backwards pass for this module?
+# > Implement a `DropoutOne` module whose forward pass zeros out the first
+# > dimension of each input vector with independent probability $0.5.$ What is
+# > the correct way to implement a backwards pass for this module?
 
 # %% [markdown]
 # ### (d)
 # > By incorporating `DropoutOne` into the forward pass, train an autoencoder in
 # > such a way that the first dimension of the code reliably distinguishes the
 # > foreground and background parts of `ulu.csv`. Ensure that your model
-# > converges within 500 iterations of full-batch gradient descent. What is the
-# > optimal expected reconstruction loss for this model?
+# > converges approximately within 500 iterations of full-batch gradient descent
+# > and log its reconstruction loss. How can you determine the optimal expected
+# > reconstruction loss for this model?
 
 
 # %% [markdown]
@@ -84,16 +78,19 @@ import matplotlib.pyplot as plt
 
 # %% [markdown]
 # ### (a)
-# > Load MobileNetV3-small with `torchvision.models.mobilenet_v3_small()`.
-# > Briefly describe the idea of a convolutional linear layer, and count the
-# > number of weights in this model.
+# > Load
+# > [mobilenet_v3_small](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.mobilenet_v3_small.html)
+# > using the `torchvision` package. Briefly describe the idea of a
+# > convolutional linear layer. Identify one convolutional layer inside
+# > MobileNetV3 and count how many parameters it has.
 
 # %% [markdown]
 # ### (b)
-# > Using MobileNetV3-small, separate the images in `bouba_kiki.npz` into a
+# > Without finetuning and without using the classification head, find a way to
+# > use MobileNetV3-small to separate the images in `bouba_kiki.npz` into a
 # > bouba class and a kiki class. Confirm that your technique works by showing a
 # > few examples of the classification. (I recommend upscaling the images to
-# > $244 \times 244$ with `Resize` from `torchvision.transforms` before passing
+# > $224 \times 224$ with `Resize` from `torchvision.transforms` before passing
 # > them to the model.)
 
 # %% [markdown]
@@ -104,7 +101,8 @@ import matplotlib.pyplot as plt
 
 # %% [markdown]
 # ### (d)
-# > **Bonus**: Can you identify the earliest layer of MobileNetV3 that reliably
-# > distinguishes between the bouba and kiki examples in our dataset?
+# > **Bonus**: Can you identify the earliest layer of MobileNetV3 that
+# > distinguishes between the bouba and kiki examples in our dataset? Describe
+# > your approach.
 
 
