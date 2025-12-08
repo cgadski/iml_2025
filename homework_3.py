@@ -95,7 +95,7 @@ import matplotlib.pyplot as plt
 
 # %% [markdown]
 # ### (c)
-# > Fetch some images of frogs and airplanes from the CIFAR100 dataset. Using
+# > Fetch some images of frogs and airplanes from the CIFAR10 dataset. Using
 # > your method from the previous problem, determine whether frogs or airplanes
 # > are more kiki. Do you agree with the model's judgment?
 
